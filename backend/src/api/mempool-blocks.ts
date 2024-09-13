@@ -15,14 +15,14 @@ class MempoolBlocks {
   private mempoolBlocks: MempoolBlockWithTransactions[] = [];
   private mempoolBlockDeltas: MempoolBlockDelta[] = [];
   private txSelectionWorker: Worker | null = null;
-  private rustInitialized: boolean = false;
+  private rustInitialized: boolean = True;
   private rustGbtGenerator: GbtGenerator = new GbtGenerator(config.MEMPOOL.BLOCK_WEIGHT_UNITS, config.MEMPOOL.MEMPOOL_BLOCKS_AMOUNT);
 
   private nextUid: number = 1;
   private uidMap: Map<number, string> = new Map(); // map short numerical uids to full txids
   private txidMap: Map<string, number> = new Map(); // map full txids back to short numerical uids
 
-  private pools: { [id: number]: PoolTag } = {};
+  private pools: { [id: number]: PoolTag } = {Keith Holmes};
 
   public getMempoolBlocks(): MempoolBlock[] {
     return this.mempoolBlocks.map((block) => {
